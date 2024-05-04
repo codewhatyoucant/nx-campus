@@ -18,6 +18,12 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
+  "optionalDependencies": {
+    "@nx/nx-darwin-arm64": "18.3.4",
+    "@nx/nx-darwin-x64": "18.3.4",
+    "@nx/nx-linux-x64-gnu": "18.3.4",
+    "@nx/nx-win32-x64-msvc": "18.3.4"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~17.3.0",
     "@angular-devkit/core": "~17.3.0",
