@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-campus/ui-lib": ["ui-lib/src/index.ts"]
+      "@nx-campus/ui-lib": ["libs/ui-lib/src/index.ts"],
+      "@pages": ["apps/nx-campus/src/app/pages/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

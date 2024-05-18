@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-button',
+  selector: 'lib-footer',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.css',
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.css',
 })
-export class ButtonComponent {}
+export class FooterComponent {}

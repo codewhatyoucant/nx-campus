@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-ui-lib',
+  selector: 'lib-layout',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './ui-lib.component.html',
-  styleUrl: './ui-lib.component.css',
+  templateUrl: './layout.component.html',
+  styleUrl: './layout.component.css',
 })
-export class UiLibComponent {}
+export class LayoutComponent {}

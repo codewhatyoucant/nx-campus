@@ -1,7 +1,7 @@
 {
   "name": "ui-lib",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "ui-lib/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-lib/src",
   "prefix": "lib",
   "projectType": "library",
   "tags": [],
@@ -10,15 +10,15 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "ui-lib/ng-package.json",
-        "tailwindConfig": "ui-lib/tailwind.config.js"
+        "project": "libs/ui-lib/ng-package.json",
+        "tailwindConfig": "libs/ui-lib/tailwind.config.js"
       },
       "configurations": {
         "production": {
-          "tsConfig": "ui-lib/tsconfig.lib.prod.json"
+          "tsConfig": "libs/ui-lib/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "ui-lib/tsconfig.lib.json"
+          "tsConfig": "libs/ui-lib/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "ui-lib/jest.config.ts"
+        "jestConfig": "libs/ui-lib/jest.config.ts"
       }
     },
     "lint": {
