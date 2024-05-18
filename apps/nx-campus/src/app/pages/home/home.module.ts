@@ -1,13 +1,20 @@
-// imports
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 
-// @NgModule decorator with its metadata
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  }
+];
+
 @NgModule({
-    declarations: [HomeComponent],
-    imports: [],
-    providers: [],
-    bootstrap: [HomeComponent]
+  declarations: [HomeComponent],
+  imports: [
+    RouterModule.forChild(routes)
+  ],
+  providers: [],
 })
 export class HomeModule { }
