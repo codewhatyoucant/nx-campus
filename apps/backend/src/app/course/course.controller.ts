@@ -1,30 +1,41 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { CreateCourseDTO } from './dto/createCourse.dto';
-
 import { CourseService } from './course.service';
-import { Course, CourseSchema } from './schemas/course.schema';
+import { Course } from './schemas/course.schema';
+import { ApiBody, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('course')
 @Controller('course')
 export class CourseController {
-    constructor(private readonly courseService: CourseService) { }
+  constructor(private readonly courseService: CourseService) {}
 
-    @Get()
-    async getCourses(): Promise<Course[]> {
-        return this.courseService.findAll();
-    }
+  @Get()
+  @ApiOperation({ summary: 'Get all courses' })
+  @ApiOkResponse({ description: 'List of courses', type: [Course] })
+  async getCourses(): Promise<Course[]> {
+    return this.courseService.findAll();
+  }
 
-    @Post()
-    async createCourse(@Body() createCourseDto: CreateCourseDTO) {
-        await this.courseService.create(createCourseDto);
-    }
+  @Post()
+  @ApiOperation({ summary: 'Create Course' })
+  @ApiBody({ type: CreateCourseDTO })
+  @ApiOkResponse({ description: 'Course Created', type: Course })
+  async createCourse(@Body() createCourseDto: CreateCourseDTO): Promise<Course> {
+    return this.courseService.create(createCourseDto);
+  }
 
-    @Delete(':id')
-    async deleteCourse(@Param('id') id: string) {
-        await this.courseService.delete(id);
-    }
+  @Delete(':id')
+  @ApiOperation({ summary: 'Delete Course' })
+  @ApiOkResponse({ description: 'Course Deleted' })
+  async deleteCourse(@Param('id') id: string): Promise<void> {
+    await this.courseService.delete(id);
+  }
 
-    @Patch(':id')
-    async updateCourse(@Param('id') id: string, @Body() updateUserDto: CreateCourseDTO) {
-        await this.courseService.update(id, updateUserDto);
-    }
+  @Patch(':id')
+  @ApiOperation({ summary: 'Update Course' })
+  @ApiBody({ type: CreateCourseDTO })
+  @ApiOkResponse({ description: 'Course Updated', type: Course })
+  async updateCourse(@Param('id') id: string, @Body() updateUserDto: CreateCourseDTO): Promise<Course> {
+    return this.courseService.update(id, updateUserDto);
+  }
 }
