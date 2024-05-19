@@ -1,0 +1,38 @@
+<div class="mt-8 max-w-md">
+    <h1>Sign Up</h1>
+    <div class="grid grid-cols-1 gap-6">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <label class="block" for="first-name">First Name: </label>
+            <input
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                id="first-name" type="text" formControlName="firstname" />
+            <label class="block" for="last-name">Last Name: </label>
+            <input
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                id="last-name" type="text" formControlName="lastname" />
+            <label class="block" for="last-name">Email: </label>
+            <input
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                id="email" type="text" formControlName="email" />
+            <label class="block" for="last-name">Passwort: </label>
+            <input
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                id="password" type="password" formControlName="password" />
+            <div class="text-red-400 text-sm" *ngIf="passwordFormField?.dirty">
+                <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('^(?=.*[A-Z])')}">At
+                    least one Uppercase letter.</span>
+                <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('(?=.*[a-z])')}">At
+                    least one lowercase letter.</span>
+                <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('(.*[0-9].*)')}">At
+                    least one digit.</span>
+                <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('(?=.*[!@#$%^&*])')}">At
+                    least one special character.</span>
+                <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('.{8,}')}">At least 8
+                    characters long.</span>
+            </div>
+            <c-button class="w-full" css="button-primary" color="t-white" type="submit"
+                [disabled]="!signupForm.valid">Submit</c-button>
+        </form>
+
+    </div>
+</div>
