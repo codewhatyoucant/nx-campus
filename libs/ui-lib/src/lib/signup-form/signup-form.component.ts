@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { StrongPasswordRegx } from './password-regex.const';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StrongPasswordRegx } from './password-regex.constant';
+import { EmailRegx } from './email-regex.constant';
 
 @Component({
   selector: 'lib-signup-form',
-  templateUrl: './signup-form.component.html'
+  templateUrl: './signup-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 
@@ -18,7 +20,7 @@ export class SignupFormComponent implements OnInit {
     this.signupForm = this.formBuilder.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.pattern(EmailRegx)]],
       password: ['', [Validators.required, Validators.pattern(StrongPasswordRegx)]]
     });
   }
