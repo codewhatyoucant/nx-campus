@@ -38,7 +38,7 @@ export class UserService {
         return updatedUser;
     }
 
-    async findByLogin(login: LoginDTO) {
+    async findByLogin(login: LoginDTO): Promise<User> {
         const { email, password } = login;
         const user = await this.userModel.findOne({ email }).exec();
         if (!user) {

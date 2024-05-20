@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StrongPasswordRegx } from './password-regex.constant';
 import { EmailRegx } from './email-regex.constant';
+import { confirmPasswordValidator } from './confirm-password.validator';
 
 @Component({
   selector: 'lib-signup-form',
@@ -21,7 +22,10 @@ export class SignupFormComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern(EmailRegx)]],
-      password: ['', [Validators.required, Validators.pattern(StrongPasswordRegx)]]
+      password: ['', [Validators.required, Validators.pattern(StrongPasswordRegx)]],
+      passwordconfirm: ['', [Validators.required, Validators.pattern(StrongPasswordRegx)]],
+      validators: confirmPasswordValidator
+
     });
   }
   get passwordFormField() {

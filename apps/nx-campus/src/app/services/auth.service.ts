@@ -18,6 +18,7 @@ export class AuthService {
             .post<User>('http://localhost:3000/api/auth/login', authenticate)
             .pipe(
                 tap((user: User) => {
+                    console.log(user);
                     this.isAuthenticated = true;
                     this.user = user;
                     this.setAuthToken(user.token);

@@ -10,13 +10,13 @@ export class LoginFormComponent {
   @Output() submit = new EventEmitter<Authenticate>();
 
   loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
   });
 
   login() {
     this.submit.emit({
-      username: this.loginForm.value.username as string,
+      email: this.loginForm.value.email as string,
       password: this.loginForm.value.password as string
     });
   }
