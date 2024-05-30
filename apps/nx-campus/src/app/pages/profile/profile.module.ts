@@ -5,7 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile.component';
 import { UserService } from '../../services/user.service';
-import { MfaComponent } from '@nx-campus/ui-lib';
+import { MfaComponent, BreadcrumbComponent } from '@nx-campus/ui-lib';
 
 
 const routes: Routes = [
@@ -20,7 +20,8 @@ const routes: Routes = [
     imports: [
         RouterModule.forChild(routes),
         HttpClientModule,
-        MfaComponent
+        MfaComponent,
+        BreadcrumbComponent
     ],
     providers: [AuthService, UserService],
 })

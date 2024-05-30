@@ -16,7 +16,7 @@ export class ClassService {
   }
 
   findAll() {
-    return this.classModel.find().populate(['curriculum']).exec();
+    return this.classModel.find().exec();
   }
 
   findOne(id: number) {

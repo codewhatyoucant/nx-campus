@@ -6,3 +6,5 @@ export * from './lib/login-form/login-form.module';
 export * from './lib/signup-form/signup-form.module';
 export * from './lib/dashboard/dashboard-header/dashboard-header.component';
 export * from './lib/profile/mfa/mfa.component';
+export * from './lib/dashboard/breadcrumb/breadcrumb.component';
+export * from './lib/dashboard/classes/classes.component'

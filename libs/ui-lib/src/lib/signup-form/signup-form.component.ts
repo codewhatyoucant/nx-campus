@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { StrongPasswordRegx } from './password-regex.constant';
-import { EmailRegx } from './email-regex.constant';
-import { confirmPasswordValidator } from './confirm-password.validator';
+import { StrongPasswordRegx } from '../validators/password-regex.constant';
+import { EmailRegx } from '../validators/email-regex.constant';
+import { confirmPasswordValidator } from '../validators/confirm-password.validator';
 
 @Component({
   selector: 'lib-signup-form',

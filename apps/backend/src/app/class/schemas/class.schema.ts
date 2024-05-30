@@ -11,6 +11,12 @@ export class Class {
     name: string;
 
     @Prop({ required: true })
+    title: string;
+
+    @Prop({ required: true })
+    description: string;
+
+    @Prop({ required: true })
     startDate: Date;
 
     @Prop({ required: true })
