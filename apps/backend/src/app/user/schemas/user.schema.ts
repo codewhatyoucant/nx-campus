@@ -1,20 +1,26 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { HydratedDocument } from 'mongoose';
+import { Prop, SchemaFactory, Schema } from '@nestjs/mongoose';
+import mongoose, { HydratedDocument, Schema as MongoSchema } from 'mongoose';
 import * as bcrypt from 'bcrypt';
+import { Role } from '../../roles/schemas/role.schema';
 
 export type UserDocument = HydratedDocument<User>;
 
 @Schema()
 export class User {
-    [x: string]: string;
+    @Prop()
+    id: MongoSchema.Types.ObjectId
+
     @Prop({ required: true })
     username: string;
 
     @Prop({ required: true })
     password: string;
 
-    @Prop({ required: true })
+    @Prop({ required: true, unique: true })
     email: string;
+
+    @Prop({ type: String, default: 'user' })
+    role: string;
 
     @Prop()
     firstName: string;

@@ -10,6 +10,7 @@ import { CourseModule } from './course/course.module';
 import { LessonModule } from './lesson/lesson.module';
 import { ClassModule } from './class/class.module';
 import { CurriculumModule } from './curriculum/curriculum.module';
+import { RolesModule } from './roles/roles.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { CurriculumModule } from './curriculum/curriculum.module';
     LessonModule,
     ClassModule,
     CurriculumModule,
+    RolesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
