@@ -5,11 +5,8 @@ import { Role } from '../../roles/schemas/role.schema';
 
 export type UserDocument = HydratedDocument<User>;
 
-@Schema()
+@Schema({ toJSON: { virtuals: true } })
 export class User {
-    @Prop()
-    id: MongoSchema.Types.ObjectId
-
     @Prop({ required: true })
     username: string;
 
@@ -49,3 +46,5 @@ UserSchema.pre('save', async function (next) {
     }
 }
 );
+UserSchema.virtual('id').get(function () { return this._id.toHexString(); });
+UserSchema.virtual('greeting').get(function () { return `Hallo ${this.username}`; });

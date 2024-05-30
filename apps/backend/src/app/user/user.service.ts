@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateUserDTO } from './dtos/createUser.dto';
 import { User } from './schemas/user.schema';
+import { IUser } from './interfaces/user.interface';
 import { LoginDTO } from '../auth/dto/login.dto';
 import * as bcrypt from 'bcrypt';
 
@@ -36,7 +37,7 @@ export class UserService {
         return updatedUser;
     }
 
-    async findByLogin(login: LoginDTO): Promise<User> {
+    async findByLogin(login: LoginDTO): Promise<IUser> {
         const { email, password } = login;
         const user = await this.userModel.findOne({ email }).exec();
         if (!user) {

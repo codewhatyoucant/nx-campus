@@ -18,8 +18,8 @@ export class AuthController {
         const payload: Payload = {
             username: user.username,
             email: user.email,
-            id: user.id.transform.toString(),
-            role: user.role
+            role: user.role,
+            id: user.id
         };
         const token = await this.authService.signPayload(payload);
         return { token };
