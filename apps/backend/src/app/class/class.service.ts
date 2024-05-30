@@ -8,26 +8,26 @@ import { Model } from 'mongoose';
 @Injectable()
 export class ClassService {
   constructor(
-    @InjectModel(Class.name) private readonly courseModel: Model<Class>
+    @InjectModel(Class.name) private readonly classModel: Model<Class>
 
   ) { }
   create(createClassDto: CreateClassDto) {
-    return 'This action adds a new class';
+    return this.classModel.create(createClassDto);
   }
 
   findAll() {
-    return `This action returns all class`;
+    return this.classModel.find().exec();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} class`;
+    return this.classModel.findOne({ _id: id }).exec();
   }
 
   update(id: number, updateClassDto: UpdateClassDto) {
-    return `This action updates a #${id} class`;
+    return this.classModel.findByIdAndUpdate(id, updateClassDto, { new: false }).exec();
   }
 
   remove(id: number) {
-    return `This action removes a #${id} class`;
+    return this.classModel.findByIdAndDelete({ _id: id }).exec();
   }
 }
