@@ -12,7 +12,7 @@ export class Curriculum {
     @Prop({ required: true })
     description: string;
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Course' })
+    @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Course' })
     courses: Course[];
 }
 export const CurriculumSchema = SchemaFactory.createForClass(Curriculum);

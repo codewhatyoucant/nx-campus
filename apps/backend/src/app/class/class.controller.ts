@@ -13,7 +13,7 @@ import { UpdateClassDto } from './dto/update-class.dto';
 
 @Controller('class')
 export class ClassController {
-  constructor(private readonly classService: ClassService) {}
+  constructor(private readonly classService: ClassService) { }
 
   @Post()
   create(@Body() createClassDto: CreateClassDto) {
@@ -32,7 +32,7 @@ export class ClassController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateClassDto: UpdateClassDto) {
-    return this.classService.update(+id, updateClassDto);
+    return this.classService.update(id, updateClassDto);
   }
 
   @Delete(':id')

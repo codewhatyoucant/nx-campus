@@ -30,9 +30,7 @@ export class CurriculumService {
   }
 
   async update(id: string, updateCurriculumDto: UpdateCurriculumDto) {
-    const stringIds = updateCurriculumDto.courses;
-    const objectIds = stringIds.map(id => new mongoose.Types.ObjectId(id)); // Fixed the issue by calling the constructor function.
-    const updatedCurriculum = await this.curriculumModel.findByIdAndUpdate(id, UpdateCurriculumDto, { new: false }).exec();
+    const updatedCurriculum = await this.curriculumModel.findByIdAndUpdate(id, updateCurriculumDto, { new: false }).exec();
     return updatedCurriculum;
   }
 }

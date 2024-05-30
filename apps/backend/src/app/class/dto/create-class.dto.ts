@@ -1,3 +1,4 @@
+import { Curriculum } from "../../curriculum/schemas/curriculum.schema";
 import { User } from "../../user/schemas/user.schema";
 
 export class CreateClassDto {
@@ -6,4 +7,5 @@ export class CreateClassDto {
     endDate: Date;
     users: User[];
     active: boolean;
+    curriclum: Curriculum
 }

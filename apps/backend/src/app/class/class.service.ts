@@ -16,14 +16,14 @@ export class ClassService {
   }
 
   findAll() {
-    return this.classModel.find().exec();
+    return this.classModel.find().populate(['curriculum']).exec();
   }
 
   findOne(id: number) {
     return this.classModel.findOne({ _id: id }).exec();
   }
 
-  update(id: number, updateClassDto: UpdateClassDto) {
+  update(id: string, updateClassDto: UpdateClassDto) {
     return this.classModel.findByIdAndUpdate(id, updateClassDto, { new: false }).exec();
   }
 
