@@ -1,6 +1,13 @@
-<div class="mt-8 max-w-md">
+<div class="mt-8 max-w-md mx-auto">
+    @if(errorMessage) {
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <p class="font-bold">Error!</p>
+        <span class="block sm:inline">{{ errorMessage }}</span>
+    </div>
+    }
     <h1>Login</h1>
     <div class="grid grid-cols-1 gap-6">
+
         <form [formGroup]="loginForm" (ngSubmit)="login()">
             <c-label>
                 Email

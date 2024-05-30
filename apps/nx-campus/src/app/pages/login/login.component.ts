@@ -13,12 +13,20 @@ import { User } from '../../models/user.model';
 
 export class LoginComponent {
   constructor(private router: Router, private authService: AuthService) { }
+  errorMessage: string | undefined;
+
 
   login(authenticate: Authenticate) {
     this.authService
       .login(authenticate)
-      .subscribe((user: User) =>
-        this.router.navigate([`/user-profile/${user.id}`])
-      );
+      .subscribe({
+        next: (res) => {
+          console.log("LoginComponent.login() called", res);
+          this.router.navigate(["/dashboard/"]);
+        },
+        error: (err: any) => {
+          this.errorMessage = "Invalid email or password";
+        }
+      });
   }
 }

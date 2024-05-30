@@ -6,8 +6,6 @@ import { User } from './schemas/user.schema';
 import { LoginDTO } from '../auth/dto/login.dto';
 import * as bcrypt from 'bcrypt';
 
-
-
 @Injectable()
 export class UserService {
 
@@ -44,10 +42,9 @@ export class UserService {
         if (!user) {
             throw new HttpException('User not found', HttpStatus.UNAUTHORIZED);
         }
-        if (await bcrypt.compare(password, user.password)) {
-            return user;
-        } else {
+        if (!await bcrypt.compare(password, user.password)) {
             throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
         }
+        return user;
     }
 }
