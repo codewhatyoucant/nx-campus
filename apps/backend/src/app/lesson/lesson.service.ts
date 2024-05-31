@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateLessonDTO } from './dtos/createLesson.dto';
 import { Lesson } from './schema/lesson.schema';
+import { UpdateLessonDto } from './dtos/updateLesson.dto';
 
 
 
@@ -31,8 +32,8 @@ export class LessonService {
         return deletedLesson;
     }
 
-    async update(id: string, createLessonDTO: CreateLessonDTO) {
-        const updatedLesson = await this.lessonModel.findByIdAndUpdate(id, createLessonDTO, { new: false }).exec();
+    async update(id: string, updateLessonDTO: UpdateLessonDto) {
+        const updatedLesson = await this.lessonModel.findByIdAndUpdate(id, updateLessonDTO, { new: false }).exec();
         return updatedLesson;
     }
 

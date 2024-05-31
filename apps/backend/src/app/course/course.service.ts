@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateCourseDTO } from './dto/createCourse.dto';
 import { Course, CourseSchema } from './schemas/course.schema';
+import { UpdateCourseDto } from './dto/updateCourse.dto';
 
 
 @Injectable()
@@ -31,8 +32,8 @@ export class CourseService {
         return deletedCourse;
     }
 
-    async update(id: string, createCourseDTO: CreateCourseDTO) {
-        const updatedUser = await this.courseModel.findByIdAndUpdate(id, createCourseDTO, { new: false }).exec();
+    async update(id: string, updateCourseDTO: UpdateCourseDto) {
+        const updatedUser = await this.courseModel.findByIdAndUpdate(id, updateCourseDTO, { new: false }).exec();
         return updatedUser;
     }
 }

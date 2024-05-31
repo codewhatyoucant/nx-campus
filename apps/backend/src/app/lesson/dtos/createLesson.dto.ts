@@ -1,4 +1,4 @@
-export interface CreateLessonDTO {
+export class CreateLessonDTO {
     module: string;
     title: string;
     subtitle: string;

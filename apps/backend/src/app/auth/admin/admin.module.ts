@@ -5,6 +5,10 @@ import { UserService } from '../../user/user.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from '../../user/schemas/user.schema';
 import { JwtModule } from '@nestjs/jwt';
+import { ClassService } from '../../class/class.service';
+import { CourseService } from '../../course/course.service';
+import { CurriculumService } from '../../curriculum/curriculum.service';
+import { LessonService } from '../../lesson/lesson.service';
 
 @Module({
   imports: [
@@ -17,6 +21,11 @@ import { JwtModule } from '@nestjs/jwt';
   controllers: [AdminController],
   providers: [
     AuthService,
+    UserService,
+    ClassService,
+    CourseService,
+    CurriculumService,
+    LessonService,
     UserService,
   ],
 })

@@ -1,4 +1,4 @@
-export interface CreateCourseDTO {
+export class CreateCourseDTO {
     title: string;
     subtitle: string;
     description: string;

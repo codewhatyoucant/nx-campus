@@ -6,6 +6,7 @@ import { User } from './schemas/user.schema';
 import { IUser } from './interfaces/user.interface';
 import { LoginDTO } from '../auth/dto/login.dto';
 import * as bcrypt from 'bcrypt';
+import { UpdateUserDto } from './dtos/updateCourse.dto';
 
 @Injectable()
 export class UserService {
@@ -32,8 +33,8 @@ export class UserService {
         return deletedUser;
     }
 
-    async update(id: string, createUserDTO: CreateUserDTO) {
-        const updatedUser = await this.userModel.findByIdAndUpdate(id, createUserDTO, { new: false }).exec();
+    async update(id: string, updateUserDTO: UpdateUserDto) {
+        const updatedUser = await this.userModel.findByIdAndUpdate(id, updateUserDTO, { new: false }).exec();
         return updatedUser;
     }
 
