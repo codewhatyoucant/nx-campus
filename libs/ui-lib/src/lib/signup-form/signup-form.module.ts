@@ -13,4 +13,20 @@ import { ErrorInputComponent } from "../form-elements/input-error/input-error.co
     exports: [SignupFormComponent]
 })
 
-export class SignupFormModule { }
+export class SignupFormModule {
+
+    showPassword(e: MouseEvent) {
+        const passwordInput = document.getElementById('password') as HTMLInputElement;
+        const eyeIconOpen = document.getElementById('eye-open') as HTMLElement;
+        const eyeIconClosed = document.getElementById('eye-closed') as HTMLElement;
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeIconClosed.classList.add('hidden');
+            eyeIconOpen.classList.remove('hidden');
+        } else {
+            passwordInput.type = 'password';
+            eyeIconClosed.classList.remove('hidden');
+            eyeIconOpen.classList.add('hidden');
+        }
+    }
+}

@@ -4,15 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
-import { BreadcrumbComponent, ClassesComponent, DashboardHeaderComponent } from '@nx-campus/ui-lib';
+import { BreadcrumbComponent, ClassesComponent, CourseComponent, DashboardHeaderComponent } from '@nx-campus/ui-lib';
 import { DashboardService } from '../../services/dashboard.service';
 import { CommonModule } from '@angular/common';
+import { CurriculumService } from '../../services/curriculum.service';
 
 
 const routes: Routes = [
     {
         path: '',
         component: DashboardComponent
+    },
+    {
+        path: 'class/:id',
+        loadComponent: () => import('./class/class.component').then(m => m.ClassComponent)
     }
 ];
 
@@ -24,9 +29,10 @@ const routes: Routes = [
         DashboardHeaderComponent,
         BreadcrumbComponent,
         ClassesComponent,
+        CourseComponent,
         CommonModule
 
     ],
-    providers: [AuthService, DashboardService],
+    providers: [AuthService, DashboardService, CurriculumService],
 })
 export class DashboardModule { }

@@ -1,5 +1,6 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { DashboardService, ClassDto } from '../../services/dashboard.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',

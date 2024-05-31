@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="uuid-32c80b05-6f1c-4757-8e45-7d9979bacb83" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 102.23 72.89"><defs><linearGradient id="uuid-e7288be4-a5c8-4db8-9d0c-92cc5582828b" x1="0" y1="38.38" x2="102.23" y2="38.38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6a5ca5"/><stop offset="1" stop-color="#d45b78"/></linearGradient><linearGradient id="uuid-0b9f3fdf-6cf3-4c01-99ba-50ba2a53d970" x1="41.98" y1="19.94" x2="60.52" y2="19.94" xlink:href="#uuid-e7288be4-a5c8-4db8-9d0c-92cc5582828b"/></defs><polygon points="28.59 3.86 32.59 10.33 16.17 20.18 32.59 30.41 28.73 37.02 21.03 33.21 21.03 44.96 51.47 63.56 81.25 45.44 81.25 33.71 73.59 37.02 69.6 30.46 85.82 20.56 69.55 10.52 73.59 3.86 102.23 20.42 89.58 28.12 89.34 49.77 51.47 72.89 12.94 48.96 12.94 27.98 0 20.28 28.59 3.86" style="fill:url(#uuid-e7288be4-a5c8-4db8-9d0c-92cc5582828b); stroke-width:0px;"/><polygon points="53.49 0 60.52 2.04 49.2 39.89 41.98 37.49 53.49 0" style="fill:url(#uuid-0b9f3fdf-6cf3-4c01-99ba-50ba2a53d970); stroke-width:0px;"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 595.28 841.89">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Unbenannter_Verlauf_44-2);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#Unbenannter_Verlauf_44);
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_44" data-name="Unbenannter Verlauf 44" x1="253.84" y1="421.89" x2="356.07" y2="421.89" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6a5ca5"/>
+      <stop offset="1" stop-color="#d45b78"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_44-2" data-name="Unbenannter Verlauf 44" x1="295.82" y1="403.46" x2="314.37" y2="403.46" xlink:href="#Unbenannter_Verlauf_44"/>
+  </defs>
+  <polygon class="cls-2" points="282.43 387.37 286.43 393.84 270.02 403.69 286.43 413.92 282.58 420.53 274.87 416.73 274.87 428.48 305.32 447.08 335.09 428.95 335.09 417.23 327.44 420.53 323.44 413.97 339.66 404.07 323.39 394.03 327.44 387.37 356.07 403.93 343.42 411.64 343.18 433.28 305.32 456.4 266.78 432.47 266.78 411.49 253.84 403.79 282.43 387.37"/>
+  <polygon class="cls-1" points="307.34 383.51 314.37 385.55 303.04 423.4 295.82 421 307.34 383.51"/>
+</svg>
