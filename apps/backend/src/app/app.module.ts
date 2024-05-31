@@ -11,6 +11,7 @@ import { LessonModule } from './lesson/lesson.module';
 import { ClassModule } from './class/class.module';
 import { CurriculumModule } from './curriculum/curriculum.module';
 import { RolesModule } from './roles/roles.module';
+import { AdminModule } from './auth/admin/admin.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { RolesModule } from './roles/roles.module';
     ClassModule,
     CurriculumModule,
     RolesModule,
+    AdminModule
   ],
   controllers: [AppController],
   providers: [AppService],
