@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { catchError, tap } from 'rxjs/operators';
-import { User } from '../models/user.model';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 import { Authenticate } from '../models/authenticate.model';
-import { EMPTY, Observable, throwError } from 'rxjs';
-
-
+import { jwtDecode } from "jwt-decode";
+import { Payload } from '../models/jwt-payload';
 
 @Injectable()
 export class AuthService {
@@ -42,5 +40,14 @@ export class AuthService {
     isAuthenticated(): boolean {
         return this.isLoggedIn;
     }
-}
 
+    getUserRole(): string | null {
+        const token = this.getAuthToken();
+        if (token) {
+            const decodedToken = jwtDecode<Payload>(token);
+            console.log(decodedToken.role);
+            return decodedToken.role || null;
+        }
+        return null;
+    }
+}

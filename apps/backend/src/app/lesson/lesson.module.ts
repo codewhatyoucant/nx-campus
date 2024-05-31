@@ -13,6 +13,6 @@ import { Lesson, LessonSchema } from './schema/lesson.schema';
     ],
     controllers: [LessonController],
     providers: [LessonService],
-    exports: [LessonService]
+    exports: [LessonService, MongooseModule]
 })
 export class LessonModule { }

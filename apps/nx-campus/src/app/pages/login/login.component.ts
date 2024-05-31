@@ -22,7 +22,15 @@ export class LoginComponent {
       .subscribe({
         next: (res) => {
           console.log("LoginComponent.login() called", res);
-          this.router.navigate(["/dashboard/"]);
+          const role = this.authService.getUserRole();
+          if (role === "admin") {
+            console.log("Du bist admin")
+            this.router.navigate(["/admin"]);
+          }
+          else {
+            this.router.navigate(["/dashboard/"]);
+            console.log("Du bist kein admin")
+          }
         },
         error: (err: any) => {
           this.errorMessage = "Invalid email or password";

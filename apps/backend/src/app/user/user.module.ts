@@ -14,6 +14,6 @@ import { JwtService } from '@nestjs/jwt';
     ],
     controllers: [UserController],
     providers: [UserService, AuthService, JwtService],
-    exports: [UserService]
+    exports: [UserService, MongooseModule]
 })
 export class UserModule { }

@@ -9,6 +9,11 @@ import { ClassService } from '../../class/class.service';
 import { CourseService } from '../../course/course.service';
 import { CurriculumService } from '../../curriculum/curriculum.service';
 import { LessonService } from '../../lesson/lesson.service';
+import { ClassModule } from '../../class/class.module';
+import { CourseModule } from '../../course/course.module';
+import { CurriculumModule } from '../../curriculum/curriculum.module';
+import { LessonModule } from '../../lesson/lesson.module';
+import { UserModule } from '../../user/user.module';
 
 @Module({
   imports: [
@@ -17,6 +22,11 @@ import { LessonService } from '../../lesson/lesson.service';
       secret: process.env.SECRET_KEY,
       signOptions: { expiresIn: '1h' },
     }),
+    ClassModule,
+    CourseModule,
+    CurriculumModule,
+    LessonModule,
+    UserModule
   ],
   controllers: [AdminController],
   providers: [

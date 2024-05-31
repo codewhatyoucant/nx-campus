@@ -10,6 +10,6 @@ import { Curriculum, CurriculumSchema } from './schemas/curriculum.schema';
     ],
     controllers: [CurriculumController],
     providers: [CurriculumService],
-    exports: []
+    exports: [CurriculumService, MongooseModule]
 })
 export class CurriculumModule { }
