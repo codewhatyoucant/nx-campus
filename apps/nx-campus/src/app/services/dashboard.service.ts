@@ -20,6 +20,24 @@ export interface ClassDto {
     active: boolean;
 }
 
+export interface LessonDto {
+    module: string;
+    title: string;
+    subtitle: string;
+    type: string;
+    duration: number;
+}
+
+export interface CourseDto {
+    id: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    image: string;
+    featured: boolean;
+    lessons: LessonDto[];
+}
+
 
 @Injectable()
 export class DashboardService {
@@ -28,6 +46,10 @@ export class DashboardService {
     getClass() {
         let url = `${environment.apiBaseUrl}/class`;
         return this.http.get<ClassDto[]>(url);
+    }
+    getCourse(id: string) {
+        let url = `${environment.apiBaseUrl}/course/${id}`;
+        return this.http.get<CourseDto[]>(url);
     }
 
 }

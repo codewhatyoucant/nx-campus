@@ -1,0 +1,11 @@
+<p>course-detail works!</p>
+<p>{{course.title}}</p>
+<p>{{course.subtitle}}</p>
+<p>{{course.description}}</p>
+<p>{{course.image}}</p>
+@for(lesson of course.lessons; track $index) {
+<p>{{lesson.title}}</p>
+<p>{{lesson.subtitle}}</p>
+<p>{{lesson.type}}</p>
+
+}

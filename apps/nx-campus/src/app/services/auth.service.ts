@@ -4,6 +4,7 @@ import { tap } from 'rxjs/operators';
 import { Authenticate } from '../models/authenticate.model';
 import { jwtDecode } from "jwt-decode";
 import { Payload } from '../models/jwt-payload';
+import { Observable, interval, of } from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -32,13 +33,23 @@ export class AuthService {
     getAuthToken(): string | null {
         return localStorage.getItem('token');
     }
+    verifyToken(): boolean {
+        const token = this.getAuthToken();
+        if (token) {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            return payload.exp > Date.now() / 1000;
+        }
+        return false;
+    }
 
     clearAuthToken() {
         localStorage.removeItem('token');
+        this.isLoggedIn = false;
     }
 
     isAuthenticated(): boolean {
-        return this.isLoggedIn;
+        const loggedIn = !!localStorage.getItem('token');
+        return loggedIn;
     }
 
     getUserRole(): string | null {

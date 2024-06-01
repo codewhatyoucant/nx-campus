@@ -18,6 +18,10 @@ const routes: Routes = [
     {
         path: 'class/:id',
         loadComponent: () => import('./class/class.component').then(m => m.ClassComponent)
+    },
+    {
+        path: 'course/:id',
+        loadComponent: () => import('./course/course.component').then(m => m.CourseComponent)
     }
 ];
 

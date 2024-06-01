@@ -18,6 +18,7 @@ export class ClassComponent {
   curriculumDataEffect = effect(() => {
     this.curriclumService.getCurriculum().subscribe
       ((data) => {
+        console.log("CurriculumData", data);
         this.curriculumData.set(data)
         this.courses.set(data[0].courses);
       });

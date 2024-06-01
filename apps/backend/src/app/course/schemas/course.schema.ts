@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import mongoose, { HydratedDocument } from 'mongoose';
 import { Lesson } from '../../lesson/schema/lesson.schema';
 
 export type CourseDocument = HydratedDocument<Course>;
@@ -20,6 +20,9 @@ export class Course {
 
     @Prop({ required: true })
     featured: boolean;
+
+    @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Lesson' })
+    lessons: Lesson[];
 }
 export const CourseSchema = SchemaFactory.createForClass(Course);
 

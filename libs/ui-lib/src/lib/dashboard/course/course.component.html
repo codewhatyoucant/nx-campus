@@ -11,7 +11,7 @@
     <div class="bg-white p-4 sm:p-6">
         <time datetime="2022-10-10" class="block text-xs text-gray-500"> 10th Oct 2022 </time>
 
-        <a href="#">
+        <a [routerLink]="['/dashboard/course', course._id]">
             <h3 class="mt-0.5 text-lg text-gray-900">{{course.title}} : {{ course.subtitle }}</h3>
         </a>
 

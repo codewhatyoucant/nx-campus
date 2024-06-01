@@ -1,6 +1,6 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { DashboardService, ClassDto } from '../../services/dashboard.service';
-import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +9,9 @@ import { CommonModule } from '@angular/common';
 })
 export class DashboardComponent {
   dashboardService = inject(DashboardService);
+  authService = inject(AuthService);
   classData = signal<ClassDto[]>([]);
+
 
   dashboardDataEffect = effect(() => {
     this.dashboardService.getClass().subscribe

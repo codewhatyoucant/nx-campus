@@ -13,6 +13,11 @@ export class CourseController {
         return this.courseService.findAll();
     }
 
+    @Get(':id')
+    async getCoursesDetails(@Param('id') id: string): Promise<Course> {
+        return this.courseService.findOne(id);
+    }
+
     @Post()
     async createCourse(@Body() createCourseDto: CreateCourseDTO) {
         await this.courseService.create(createCourseDto);
