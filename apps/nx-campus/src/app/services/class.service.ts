@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
-import { User } from '../models/user.model';
+import { Class } from '../models/class.model';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
@@ -13,12 +13,12 @@ export interface UserDto {
 }
 
 @Injectable()
-export class UserService {
+export class ClassService {
   token: string | undefined;
 
   constructor(private httpClient: HttpClient, private authService: AuthService) { }
 
-  getAllUsers(): Observable<User[]> {
+  getAllClasses(): Observable<Class[]> {
     var httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -26,16 +26,17 @@ export class UserService {
       })
     }
     return this.httpClient
-      .get('http://localhost:3000/api/user', httpOptions)
+      .get('http://localhost:3000/api/class', httpOptions)
       .pipe(
         tap((res: any) => {
-          console.log('Profile triggert', res);
+          console.log('Classes triggert', res);
           return res;
         })
       );
   }
 
-  getProfile(): Observable<User> {
+
+  getClassDetails(id: string): Observable<Class> {
     var httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -44,25 +45,7 @@ export class UserService {
     }
 
     return this.httpClient
-      .get('http://localhost:3000/api/user/profile', httpOptions)
-      .pipe(
-        tap((res: any) => {
-          console.log('Profile triggert', res);
-          return res;
-        })
-      );
-  }
-
-  getUserDetails(id: string): Observable<User> {
-    var httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.authService.getAuthToken()
-      })
-    }
-
-    return this.httpClient
-      .get(`http://localhost:3000/api/user/${id}`, httpOptions)
+      .get(`http://localhost:3000/api/class/${id}`, httpOptions)
       .pipe(
         tap((res: any) => {
           console.log('Details triggert', res);
@@ -71,7 +54,7 @@ export class UserService {
       );
   }
 
-  updateUserDetails(id: string, userDetails: Partial<UserDto>): Observable<User> {
+  updateUserDetails(id: string, classDetails: Partial<Class>): Observable<Class> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -79,14 +62,14 @@ export class UserService {
       })
     };
 
-    console.log('PUT URL:', `http://localhost:3000/api/user/${id}`);  
-    console.log('User Details:', userDetails); 
+    console.log('PUT URL:', `http://localhost:3000/api/class/${id}`);  
+    console.log('User Details:', classDetails); 
 
     return this.httpClient
-      .patch(`http://localhost:3000/api/user/${id}`, userDetails, httpOptions)
+      .patch(`http://localhost:3000/api/class/${id}`, classDetails, httpOptions)
       .pipe(
         tap((res: any) => {
-          console.log('User details updated', res);
+          console.log('Class details updated', res);
           return res;
         })
       );
