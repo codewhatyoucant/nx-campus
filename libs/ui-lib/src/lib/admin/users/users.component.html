@@ -23,7 +23,7 @@
         <ul>
             @for (user of users; track $index) {
             <li>
-                <a href="http://" class="p-3 border border-slate-200 block">
+                <a (click)="userClicked(user._id)" class="p-3 border border-slate-200 block">
                     <span>{{user.username}}</span>
                 </a>
             </li>
@@ -80,8 +80,12 @@
             </li>
         </ol>
     </div>
-    <div class="w-3/4">
+    <div class="w-3/4 p-2">
         <h3 class="text-xl">User Details</h3>
-        <span>Kein User ausgewählt</span>
+        @if (userDetails()) {
+        <span>{{userDetails().username}}</span>
+        }
+
+
     </div>
 </div>

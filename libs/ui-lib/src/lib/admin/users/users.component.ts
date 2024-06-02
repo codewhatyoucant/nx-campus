@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,8 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class AdminUsersComponent {
   @Input() users: any;
+  @Input() userDetails: any;
+  userDetailId = output<string>();
 
-  getUserDetails(id: string) {
-    console.log("User Details", id);
+  userClicked(id: string) {
+    this.userDetailId.emit(id);
   }
+
 }

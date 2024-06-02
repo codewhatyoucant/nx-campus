@@ -32,23 +32,40 @@ export class UserService {
     }
 
 
-getProfile(): Observable < User > {
-    var httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + this.authService.getAuthToken()
-        })
-    }
+    getProfile(): Observable<User> {
+        var httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.authService.getAuthToken()
+            })
+        }
 
         return this.httpClient
-        .get('http://localhost:3000/api/user/profile', httpOptions)
-        .pipe(
-            tap((res: any) => {
-                console.log('Profile triggert', res);
-                return res;
+            .get('http://localhost:3000/api/user/profile', httpOptions)
+            .pipe(
+                tap((res: any) => {
+                    console.log('Profile triggert', res);
+                    return res;
+                })
+            );
+    }
+    getUserDetails(id: string): Observable<User> {
+        var httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.authService.getAuthToken()
             })
-        );
-}
+        }
+
+        return this.httpClient
+            .get(`http://localhost:3000/api/user/${id}`, httpOptions)
+            .pipe(
+                tap((res: any) => {
+                    console.log('Details triggert', res);
+                    return res;
+                })
+            );
+    }
 
 }
 
