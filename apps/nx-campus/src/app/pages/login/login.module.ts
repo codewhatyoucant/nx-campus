@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
-import { LoginFormModule } from '@nx-campus/ui-lib';
+import { BreadcrumbComponent, LoginFormModule } from '@nx-campus/ui-lib';
 import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,7 +19,8 @@ const routes: Routes = [
     imports: [
         RouterModule.forChild(routes),
         LoginFormModule,
-        HttpClientModule
+        HttpClientModule,
+        BreadcrumbComponent
     ],
     providers: [AuthService],
 })

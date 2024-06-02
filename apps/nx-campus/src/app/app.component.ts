@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   isLoggedIn = signal<boolean>(false);
+  isAdmin = signal<boolean>(false);
   constructor(private authService: AuthService, private router: Router) {
   }
 
@@ -22,6 +23,12 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isLoggedIn.set(this.authService.isAuthenticated());
+        const role = this.authService.getUserRole();
+        if (role === 'admin') {
+          this.isAdmin.set(true);
+        } else {
+          this.isAdmin.set(false);
+        }
       }
     });
   }

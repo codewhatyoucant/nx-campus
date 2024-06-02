@@ -24,6 +24,7 @@ export class HeaderComponent {
     });
   }
   @Input() isLoggedIn: boolean = false;
+  @Input() isAdmin: boolean = false;
   toogleMenu() {
     this.elmRef.nativeElement.querySelector('#menu').classList.toggle('hidden');
   }

@@ -13,15 +13,18 @@ import { CurriculumService } from '../../services/curriculum.service';
 const routes: Routes = [
     {
         path: '',
-        component: DashboardComponent
+        component: DashboardComponent,
+        data: { "breadcrumb": "Dashboard" }
     },
     {
         path: 'class/:id',
-        loadComponent: () => import('./class/class.component').then(m => m.ClassComponent)
+        loadComponent: () => import('./class/class.component').then(m => m.ClassComponent),
+        data: { "breadcrumb": "Klassen" }
     },
     {
         path: 'course/:id',
-        loadComponent: () => import('./course/course.component').then(m => m.CourseComponent)
+        loadComponent: () => import('./course/course.component').then(m => m.CourseComponent),
+        data: { "breadcrumb": "Kurse" }
     }
 ];
 

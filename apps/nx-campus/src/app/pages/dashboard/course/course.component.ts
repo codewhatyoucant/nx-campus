@@ -1,12 +1,12 @@
 import { Component, Input, OnInit, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseDto, DashboardService, LessonDto } from '../../../services/dashboard.service';
-import { CourseDetailComponent } from '@nx-campus/ui-lib';
+import { BreadcrumbComponent, CourseDetailComponent } from '@nx-campus/ui-lib';
 
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [CommonModule, CourseDetailComponent],
+  imports: [CommonModule, CourseDetailComponent, BreadcrumbComponent],
   templateUrl: './course.component.html',
   styleUrl: './course.component.css',
 })

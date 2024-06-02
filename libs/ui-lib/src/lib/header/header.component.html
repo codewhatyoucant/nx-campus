@@ -13,6 +13,11 @@
             <li><a routerLink="/support"
                     class="font-medium text-sm mx-2 text-gray-800 uppercase hover:text-violet-500">Fragen & Hilfe</a>
             </li>
+            @if (isLoggedIn === true && isAdmin === true) {
+            <li><a routerLink="/admin"
+                    class="font-medium text-sm mx-2 text-white bg-red-500 uppercase p-2 rounded-md">ADMIN</a>
+            </li>
+            }
             @if (isLoggedIn === true) {
             <li>
                 <div class="px-2">

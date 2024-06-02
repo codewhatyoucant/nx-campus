@@ -11,3 +11,5 @@ export * from './lib/dashboard/classes/classes.component';
 export * from './lib/dashboard/course/course.component';
 export * from './lib/admin/admin.component';
 export * from './lib/dashboard/course-detail/course-detail.component';
+
+export * from './lib/admin/users/users.component';

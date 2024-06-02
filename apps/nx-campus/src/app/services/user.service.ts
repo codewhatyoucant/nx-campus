@@ -14,16 +14,15 @@ export class UserService {
 
     constructor(private httpClient: HttpClient, private authService: AuthService) { }
 
-    getProfile(): Observable<User> {
+    getAllUsers(): Observable<User[]> {
         var httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + this.authService.getAuthToken()
             })
         }
-
         return this.httpClient
-            .get('http://localhost:3000/api/user/profile', httpOptions)
+            .get('http://localhost:3000/api/user', httpOptions)
             .pipe(
                 tap((res: any) => {
                     console.log('Profile triggert', res);
@@ -31,6 +30,25 @@ export class UserService {
                 })
             );
     }
+
+
+getProfile(): Observable < User > {
+    var httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + this.authService.getAuthToken()
+        })
+    }
+
+        return this.httpClient
+        .get('http://localhost:3000/api/user/profile', httpOptions)
+        .pipe(
+            tap((res: any) => {
+                console.log('Profile triggert', res);
+                return res;
+            })
+        );
+}
 
 }
 

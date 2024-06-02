@@ -33,6 +33,7 @@ export class AuthService {
     getAuthToken(): string | null {
         return localStorage.getItem('token');
     }
+
     verifyToken(): boolean {
         const token = this.getAuthToken();
         if (token) {

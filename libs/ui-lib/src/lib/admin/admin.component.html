@@ -1,26 +1,33 @@
-<div class="p-3 border border-gray-300 rounded-lg flex flex-row justify-between">
-    <section>
-        <h3>Willkommen im Admin-Bereich</h3>
-    </section>
-    <section>
-        <h3>Vervollständige Dein Profil</h3>
-        <div class="relative w-32 h-32 my-2 mx-auto">
-            <svg class="w-full h-full" viewBox="0 0 100 100">
-                <!-- Background circle -->
-                <circle class="text-gray-200 stroke-current" stroke-width="8" cx="50" cy="50" r="40" fill="transparent">
-                </circle>
-                <!-- Progress circle -->
-                <circle class="text-violet-500  progress-ring__circle stroke-current" stroke-width="8"
-                    stroke-linecap="round" cx="50" cy="50" r="40" fill="transparent" stroke-dasharray="251.2"
-                    stroke-dashoffset="calc(251.2 - (251.2 * 30) / 100)"></circle>
+<div class="my-4">
+    <div class="sm:block">
+        <nav class="flex gap-6" aria-label="Tabs">
+            <a routerLink="/admin/dashboard"
+                class="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                Übersicht
+            </a>
+            <a routerLink="/admin/users"
+                class="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                Benutzer
+            </a>
+            <a routerLink="/admin/classes"
+                class="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                Klassen
+            </a>
 
-                <!-- Center text -->
-                <text x="50" y="50" font-family="Verdana" font-size="12" text-anchor="middle"
-                    alignment-baseline="middle">30%</text>
-            </svg>
-        </div>
-        <a href="/profile"
-            class="block p-2 bg-gray-200 border border-gray-300 rounded-lg text-center hover:bg-gray-100">Profil
-            bearbeiten</a>
-    </section>
+            <a routerLink="/admin/curriculums"
+                class="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                Curriculums
+            </a>
+
+            <a routerLink="/admin/courses"
+                class="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                Kurse
+            </a>
+
+            <a routerLink="/admin/lessons"
+                class="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-700 bg-gray-100  ">
+                Lektionen
+            </a>
+        </nav>
+    </div>
 </div>
