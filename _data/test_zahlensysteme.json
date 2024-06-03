@@ -1,0 +1,143 @@
+{
+    "_id": "665a5e75b927845278bd5435",
+    "module": "Modul 1: Einführung",
+    "title": "Abschlussprüfung und Wissensüberprüfung",
+    "subtitle": "Überprüfung des Gelernten",
+    "type": "test",
+    "course": "665a5c9bb927845278bd5424",
+    "__v": 0,
+    "data": [
+        {
+            "question": "Welches ist die Binärdarstellung der Dezimalzahl 5?",
+            "answers": [
+                "101",
+                "110",
+                "1001",
+                "111"
+            ],
+            "solution": 1,
+            "hint": "Die Binärzahl 101 ergibt in Dezimal 5, da die Zahlen von rechts nach links entsprechen ihrer Potenz stufenweise zunehmen."
+        },
+        {
+            "question": "Wie lautet die Hexadezimaldarstellung der Dezimalzahl 255?",
+            "answers": [
+                "EF",
+                "FA",
+                "FF",
+                "EE"
+            ],
+            "solution": 3,
+            "hint": "255 dezimal ist FF in hexadezimal. Jede Hexadezimalziffer repräsentiert 4 Binärstellen, 255 ist 11111111 in Binär."
+        },
+        {
+            "question": "Welche Dezimalzahl entspricht der Binärzahl 1101?",
+            "answers": [
+                "12",
+                "13",
+                "14",
+                "15"
+            ],
+            "solution": 2,
+            "hint": "Die Binärzahl 1101 entspricht der Dezimalzahl 13. Berechne dies durch 8 + 4 + 0 + 1."
+        },
+        {
+            "question": "Was ist die korrekte Addition im Hexadezimalsystem für A2 + 1F?",
+            "answers": [
+                "C0",
+                "C1",
+                "BD",
+                "B1"
+            ],
+            "solution": 2,
+            "hint": "A2 + 1F = C1 im Hexadezimalsystem. Man rechnet separat für die Einer- und Zehnerstelle und beachtet die Überträge."
+        },
+        {
+            "question": "Welches Zahlensystem benutzt die Basis 8?",
+            "answers": [
+                "Dezimal",
+                "Hexadezimal",
+                "Oktal",
+                "Binär"
+            ],
+            "solution": 3,
+            "hint": "Das Oktalsystem nutzt die Basis 8, wobei Zahlen von 0 bis 7 verwendet werden."
+        },
+        {
+            "question": "Wie lautet die korrekte binäre Addition von 1011 + 1101?",
+            "answers": [
+                "11000",
+                "10100",
+                "10010",
+                "11110"
+            ],
+            "solution": 1,
+            "hint": "1011 + 1101 = 11000 in Binär. Man addiert jedes Bit unter Beachtung des Übertrags."
+        },
+        {
+            "question": "Was ist die Dezimalzahl für die hexadezimale Zahl 1A?",
+            "answers": [
+                "26",
+                "28",
+                "30",
+                "32"
+            ],
+            "solution": 1,
+            "hint": "1A in Hexadezimal ist 26 in Dezimal (1*16 + 10*1)."
+        },
+        {
+            "question": "Wie wird die Dezimalzahl 58 in das Binärsystem umgewandelt?",
+            "answers": [
+                "111100",
+                "110110",
+                "101110",
+                "100110"
+            ],
+            "solution": 3,
+            "hint": "58 in Dezimal ist 111010 in Binär."
+        },
+        {
+            "question": "Welche Aussage über das Hexadezimalsystem ist korrekt?",
+            "answers": [
+                "Es verwendet ausschließlich Buchstaben von A bis F.",
+                "Es ist ein Basissystem der Stufe 10.",
+                "Es beinhaltet Ziffern von 0 bis 9 und Buchstaben von A bis F.",
+                "Es hat keine Anwendung in der Computerprogrammierung."
+            ],
+            "solution": 3,
+            "hint": "Das Hexadezimalsystem nutzt Ziffern von 0 bis 9 und die Buchstaben A bis F, um Zahlen darzustellen."
+        },
+        {
+            "question": "Addiere die zwei Oktalzahlen 17 und 21.",
+            "answers": [
+                "40",
+                "38",
+                "30",
+                "48"
+            ],
+            "solution": 1,
+            "hint": "17 + 21 im Oktalsystem ist gleich 40. Denke daran, dass 8 die Basis ist und man bei 8 einen Übertrag ausführt."
+        },
+        {
+            "question": "Wie lautet die korrekte Umwandlung der Binärzahl 100101 in das Hexadezimalsystem?",
+            "answers": [
+                "25",
+                "29",
+                "2A",
+                "2B"
+            ],
+            "solution": 2,
+            "hint": "100101 in Binär ist 25 in Hexadezimal. Teile die Binärzahl von rechts in Gruppen zu je vier Bits auf."
+        },
+        {
+            "question": "Welche Oktalzahl entspricht der Dezimalzahl 72?",
+            "answers": [
+                "106",
+                "110",
+                "101",
+                "111"
+            ],
+            "solution": 2,
+            "hint": "Die Dezimalzahl 72 entspricht der Oktalzahl 110. Rechne dies indem du 72 durch 8 teilst und die Reste notierst."
+        }
+    ]
+}
