@@ -13,4 +13,9 @@ export * from './lib/admin/admin.component';
 export * from './lib/dashboard/course-detail/course-detail.component';
 
 export * from './lib/admin/users/users.component';
-export * from './lib/admin/Classes/classes.component';
+export * from './lib/admin/classes/classes.component';
+export * from './lib/admin/courses/courses.component';
+
+export * from './lib/admin/curriculum/curriculum.component';
+
+export * from './lib/admin/lesson/lesson.component';
